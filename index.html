@@ -1,0 +1,184 @@
+<!doctype html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>三言語のホームページ制作｜日本語・英語・中国語</title>
+<meta name="description" content="日本語・英語・中国語の三言語に対応したホームページを、個人店向けに制作しています。制作サンプルを公開しています。">
+<style>
+/* ───────────────────────────────────────────
+   ポートフォリオ。ここだけは「作品」ではなく「窓口」。
+   凝りすぎず、three things だけ即答する：
+   誰が / いくらで / 何を作るのか。
+   ─────────────────────────────────────────── */
+:root{
+  --bg:#12100e; --bg-2:#1b1815;
+  --fg:#efe9e0; --fg-dim:#9d9489;
+  --accent:#c4a35a; --accent-2:#e0c98f;
+  --line:rgba(196,163,90,.24);
+  --sans:"Hiragino Sans","Yu Gothic","YuGothic","PingFang SC","Microsoft YaHei",sans-serif;
+  --serif:"Hiragino Mincho ProN","Yu Mincho","游明朝","Songti SC",serif;
+  --g:clamp(1.25rem,5vw,5rem);
+}
+*{box-sizing:border-box;margin:0;padding:0}
+body{background:var(--bg);color:var(--fg);font-family:var(--sans);
+     line-height:1.9;-webkit-font-smoothing:antialiased;overflow-x:hidden}
+.wrap{max-width:1080px;margin:0 auto;padding-inline:var(--g)}
+section{padding-block:clamp(3.5rem,9vw,6.5rem)}
+a{color:inherit}
+
+.hero{padding-block:clamp(5rem,13vw,9rem) clamp(3rem,7vw,5rem)}
+.hero .kick{font-size:.66rem;letter-spacing:.4em;color:var(--accent);margin-bottom:1.6rem}
+.hero h1{
+  font-family:var(--serif);font-size:clamp(1.9rem,5.2vw,3.4rem);font-weight:400;
+  letter-spacing:.04em;line-height:1.5;margin-bottom:1.8rem;
+}
+.hero h1 b{color:var(--accent-2);font-weight:400}
+.hero p{max-width:36rem;color:var(--fg-dim);font-size:clamp(.94rem,1.5vw,1.02rem)}
+
+.three{
+  display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,220px),1fr));
+  gap:1px;background:var(--line);border:1px solid var(--line);margin-top:3rem;
+}
+.three div{background:var(--bg);padding:1.7rem 1.4rem}
+.three dt{font-size:.6rem;letter-spacing:.28em;color:var(--accent);margin-bottom:.6rem}
+.three dd{font-size:.92rem;line-height:1.85}
+
+h2{font-family:var(--serif);font-size:clamp(1.4rem,3.2vw,2.1rem);font-weight:400;
+   letter-spacing:.06em;margin-bottom:.4rem}
+.lead{color:var(--fg-dim);font-size:.9rem;margin-bottom:2.8rem}
+
+/* ══ 作品 ══ */
+.works{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,240px),1fr));gap:1.4rem}
+.work{
+  display:block;text-decoration:none;border:1px solid var(--line);
+  background:var(--bg-2);transition:border-color .35s,transform .35s;
+}
+.work:hover{border-color:var(--accent);transform:translateY(-4px)}
+.swatch{height:130px;position:relative;overflow:hidden}
+.swatch span{position:absolute;font-family:var(--serif);font-size:1.6rem;letter-spacing:.16em}
+/* 各サンプルの配色をそのまま見本に使う */
+.sw-chuka{background:radial-gradient(120% 100% at 78% 12%,#7d1c18,#160b0a)}
+.sw-chuka span{color:#e0c46a;right:1.1rem;bottom:.9rem;writing-mode:vertical-rl}
+.sw-sushi{background:#f7f5f0;border-bottom:1px solid var(--line)}
+.sw-sushi span{color:#1c1b18;left:50%;top:50%;transform:translate(-50%,-50%);letter-spacing:.4em}
+.sw-salon{background:radial-gradient(circle at 68% 34%,#e4d0c6,#b8836f)}
+.sw-salon span{color:#faf8f5;left:1.2rem;bottom:.9rem;font-family:var(--sans);font-size:1.2rem}
+.sw-koumuten{background:
+  linear-gradient(rgba(22,40,60,.14) 1px,transparent 1px) 0 0/100% 20px,
+  linear-gradient(90deg,rgba(22,40,60,.14) 1px,transparent 1px) 0 0/20px 100%,#e9e7e2}
+.sw-koumuten span{color:#16283c;left:1.2rem;bottom:.9rem;font-family:var(--sans);font-weight:800;font-size:1.3rem}
+.work .meta{padding:1.3rem 1.3rem 1.5rem}
+.work h3{font-size:1rem;font-weight:400;margin-bottom:.35rem}
+.work .cat{font-size:.62rem;letter-spacing:.22em;color:var(--accent);margin-bottom:.7rem}
+.work p{font-size:.8rem;color:var(--fg-dim);line-height:1.85}
+
+/* ══ 料金 ══ */
+.tint{background:var(--bg-2);border-block:1px solid var(--line)}
+.plan{border:1px solid var(--line);padding:2.2rem 1.9rem;max-width:30rem}
+.plan .price{font-family:var(--serif);font-size:clamp(2rem,5vw,2.8rem);color:var(--accent-2);line-height:1}
+.plan .price small{font-size:.78rem;color:var(--fg-dim);margin-left:.5rem;font-family:var(--sans)}
+.plan ul{list-style:none;margin:1.8rem 0 0}
+.plan li{font-size:.88rem;padding:.5rem 0 .5rem 1.4rem;position:relative;color:var(--fg)}
+.plan li::before{content:"—";position:absolute;left:0;color:var(--accent)}
+.plan .month{margin-top:1.8rem;padding-top:1.4rem;border-top:1px solid var(--line);font-size:.88rem}
+.plan .month b{color:var(--accent-2);font-weight:400}
+
+.subsidy{
+  margin-top:2rem;padding:1.2rem 1.4rem;border-left:2px solid var(--accent);
+  background:rgba(196,163,90,.06);font-size:.85rem;color:var(--fg-dim);max-width:34rem;
+}
+
+/* ══ 連絡 ══ */
+.contact a.mail{
+  font-family:var(--serif);font-size:clamp(1.1rem,3vw,1.6rem);color:var(--accent-2);
+  text-decoration:none;border-bottom:1px solid var(--line);
+}
+.contact a.mail:hover{border-color:var(--accent)}
+
+footer{border-top:1px solid var(--line);padding-block:2.6rem;font-size:.72rem;
+       color:var(--fg-dim);line-height:2}
+footer .note{max-width:44rem}
+
+@media(prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}}
+</style>
+</head>
+<body>
+
+<header class="hero wrap">
+  <div class="kick">WEB DESIGN — JA / EN / ZH</div>
+  <h1>お店の前を通る<b>外国語のお客様</b>に、<br>予約の取り方が伝わっていますか。</h1>
+  <p>日本語・英語・中国語の三言語に対応したホームページを、個人店向けに制作しています。Googleマップの店舗情報の多言語整備までを含めてお引き受けします。</p>
+  <dl class="three">
+    <div><dt>制作</dt><dd>三言語1ページ<br>¥98,000（税別）</dd></div>
+    <div><dt>保守</dt><dd>月額 ¥5,500（税別）<br>四半期ごとに更新</dd></div>
+    <div><dt>対応言語</dt><dd>日本語・英語・中国語<br>すべて本人が執筆</dd></div>
+  </dl>
+</header>
+
+<section class="wrap">
+  <h2>制作サンプル</h2>
+  <p class="lead">いずれも架空の店舗を題材にした見本です。実在の店舗ではありません。</p>
+  <div class="works">
+    <a class="work" href="chuka/">
+      <div class="swatch sw-chuka"><span>福順樓</span></div>
+      <div class="meta"><div class="cat">中華料理</div><h3>福順樓</h3>
+        <p>町場の老舗。宴会の収容人数と、昼の定食を前に出す構成。</p></div>
+    </a>
+    <a class="work" href="sushi/">
+      <div class="swatch sw-sushi"><span>鮨</span></div>
+      <div class="meta"><div class="cat">和食・鮨</div><h3>鮨 なぎさ</h3>
+        <p>おまかせ一本。余白を最大に取り、価格と流れだけを置く。</p></div>
+    </a>
+    <a class="work" href="salon/">
+      <div class="swatch sw-salon"><span>SOU</span></div>
+      <div class="meta"><div class="cat">美容室</div><h3>hair salon SOU</h3>
+        <p>料金表と担当者を最短距離で。写真なしでも柔らかく見せる。</p></div>
+    </a>
+    <a class="work" href="koumuten/">
+      <div class="swatch sw-koumuten"><span>山田</span></div>
+      <div class="meta"><div class="cat">工務店</div><h3>山田工務店</h3>
+        <p>実績・許可番号・見積りの流れ。信頼できるかを最初に示す。</p></div>
+    </a>
+  </div>
+</section>
+
+<section class="tint">
+  <div class="wrap">
+    <h2>料金</h2>
+    <p class="lead">お見積りは無料です。お断りいただいても費用はかかりません。</p>
+    <div class="plan">
+      <div class="price">¥98,000<small>（税別・制作費）</small></div>
+      <ul>
+        <li>日本語・英語・中国語の1ページサイト（スマートフォン対応）</li>
+        <li>Googleビジネスプロフィールの多言語整備</li>
+        <li>予約導線の設計（電話・LINE・フォームのいずれか）</li>
+        <li>主要メニュー・サービスの翻訳</li>
+        <li>お写真は貴店からご提供いただきます（撮影は別途ご相談）</li>
+      </ul>
+      <div class="month">保守 <b>月額 ¥5,500</b>（税別）— ドメイン・サーバー管理、四半期ごとの内容更新、不具合対応</div>
+    </div>
+    <div class="subsidy">
+      <b style="color:var(--accent-2);font-weight:400">小規模事業者持続化補助金</b> の対象になる場合があります（補助率2/3）。
+      ウェブサイト関連費には上限があるため単独では申請しづらいのですが、看板・チラシ等と合わせた申請であれば実質負担を下げられます。
+      ご希望でしたら商工会議所へのご相談に同席いたします。公募回により要件が変わるため、その時点の最新要領で確認します。
+    </div>
+  </div>
+</section>
+
+<section class="wrap contact">
+  <h2>お問い合わせ</h2>
+  <p class="lead">まずはメールをいただければ、折り返しご連絡いたします。</p>
+  <a class="mail" href="mailto:yyyyy.yeyuhe@gmail.com">yyyyy.yeyuhe@gmail.com</a>
+</section>
+
+<footer>
+  <div class="wrap note">
+    <p>掲載している制作サンプルは、いずれも<strong style="color:var(--fg);font-weight:400">架空の店舗を題材にした見本</strong>です。実在の店舗・事業者の依頼を受けて制作したものではなく、記載の住所・電話番号・許可番号等はすべて架空のものです。</p>
+    <p style="margin-top:1rem">お問い合わせの際にいただいた氏名・連絡先は、ご返信および制作のご相談のためにのみ利用し、第三者に提供いたしません。ご連絡が不要になった場合はその旨お知らせください。以後お送りいたしません。</p>
+    <p style="margin-top:1rem">Jason Ye（葉 宇鶴）· 東京 · <a href="mailto:yyyyy.yeyuhe@gmail.com" style="color:var(--accent-2)">yyyyy.yeyuhe@gmail.com</a></p>
+  </div>
+</footer>
+
+</body>
+</html>
